@@ -2,13 +2,24 @@
 <html lang="{{lang}}">
   <head>
     <meta charset="utf-8">
-    <title>Pokémon Go Map</title>
+    <title>Live Pokémon Go Map by warDevyll</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="PokeMap">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#3b3b3b">
+    
+    
+
+<meta property="og:title" content="Live Pokémon Go Map by warDevyll">
+<meta property="og:site_name" content="Live Pokémon Go Map by warDevyll">
+<meta property="og:url" content="http://pokemon.dsmalicsi.com/map">
+<meta property="og:description" content="See nearby Pokémons, PokéStops and Gyms Live!">
+<meta property="og:type" content="website">
+<meta property="og:image" content="http://pokemon.dsmalicsi.com/pokemap_2.png">
+
+
     <!-- Fav- & Apple-Touch-Icons -->
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='appicons/favicon.ico').lstrip('/') }}" type="image/x-icon">
@@ -31,18 +42,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/app.min.css').lstrip('/') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.css">
     <script src="{{ url_for('static', filename='js/vendor/modernizr.custom.js').lstrip('/') }}"></script>
+    
+
   </head>
   <body id="top">
     <div class="wrapper">
       <!-- Header -->
       <header id="header">
         <a href="#nav"><span class="label">Options</span></a>
-        <h1><a href="#">Pokémon Go Map</a></h1>
+        <h1><a href="#">Live Pokémon Go Map by warDevyll</a></h1>
         <a href="#stats" id="statsToggle" class="statsNav" style="float: right;"><span class="label">Stats</span></a>
       </header>
       <!-- NAV -->
-      <nav id="nav">
+      <nav id="nav" class="visible">
+           
         <div id="nav-accordion">
+             
           <h3>Marker Settings</h3>
           <div>
             <div class="form-control switch-container">
@@ -94,7 +109,7 @@
             <div class="form-control">
               <label for="exclude-pokemon">
               <h3>Hide Pokémon</h3>
-              <div style="max-height:165px;overflow-y:auto">
+              <div style="max-height:165px;overflow-y:auto";>
                 <select id="exclude-pokemon" multiple="multiple"></select>
               </div>
               </label>
@@ -103,12 +118,6 @@
 
           <h3>Location Settings</h3>
           <div>
-            <div class="form-control switch-container" style="display:{{is_fixed}}" >
-              <label for="next-location">
-              <h3>Change scan location</h3>
-              <input id="next-location" type="text" name="next-location" placeholder="Change your location">
-              </label>
-            </div>
             <div class="form-control switch-container" style="display:{{is_fixed}}" >
               <h3>Scan follows location</h3>
               <div class="onoffswitch">
@@ -146,7 +155,7 @@
             <div class="form-control">
               <label for="notify-pokemon">
                 <h3>Notify of Pokémon</h3>
-                <div style="max-height:165px;overflow-y:auto">
+                <div style="max-height:165px;overflow-y:auto";>
                   <select id="notify-pokemon" multiple="multiple"></select>
                 </div>
               </label>
@@ -154,7 +163,7 @@
             <div class="form-control">
               <label for="notify-rarity">
                 <h3>Notify of Rarity</h3>
-                <div style="max-height:165px;overflow-y:auto">
+                <div style="max-height:165px;overflow-y:auto";>
                   <select id="notify-rarity" multiple="multiple"></select>
                 </div>
               </label>
@@ -210,6 +219,14 @@
           <div id="pokestopList" style="color: black;"></div>
         </div>
       </nav>
+      
+      <div style="background-color: rgba(100,100,100,0.85);position: absolute;top: 50px;z-index: 2;left: 20px;padding: 10px;color: #FFF;">
+      <span style="
+    font-weight: bold;
+">Search location</span>
+        <input id="next-location" type="text" name="next-location" placeholder="Change your location" style="background-color: #FFF;color:black;width: 245px;">
+      </div>
+      
       <div id="map"></div>
     </div>
     <!-- Scripts -->

@@ -1,12 +1,12 @@
 <html>
 <head>
-	<title>Nearby Pokémon</title>
+	<title>Live Nearby Pokémon - by warDevyll</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>var pageLoaded = new Date().getTime();</script>
 	<link rel="stylesheet" href="{{ url_for('static', filename='dist/css/mobile.min.css').lstrip('/') }}" type="text/css" />
 </head>
 <body>
-	<h1>Nearby Pokémon</h1>
+	<h1>Live Nearby Pokémon</h1>
 
 	<ol>
 {% for pokemon in pokemon_list[:20] %}

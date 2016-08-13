@@ -689,7 +689,7 @@ var StoreTypes = {
 
 var StoreOptions = {
   'map_style': {
-    default: 'roadmap',
+    default: 'style_pgo',
     type: StoreTypes.String
   },
   'remember_select_exclude': {
