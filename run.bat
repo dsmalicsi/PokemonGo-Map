@@ -1,0 +1,1 @@
+runserver.py -a ptc -u "dsmalicsi_map" -p "dscm123" -l 'Olongapo' -st 12 -k "AIzaSyDVCpweWawMHuErimxA_XEPNxXpZ_KCz3E"
